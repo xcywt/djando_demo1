@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>留言时间</th>
+            <th>留言者</th>
+            <th>标题</th>
+	    <th>内容</th>
+        </tr>
+    </thead>
+    <tbody>
+	<a href = "/online/create/">留言<a/> <!-- 把留言跳到另外一个地方 -->
+	<!-- for 循环在messages中读取数据，再分别取出来放在每一列 -->
+	{% if messages %}
+		{% for mes in messages %}
+			<tr>
+			    <th>{{ mes.publish_date }}</th>
+			    <th>{{ mes.username }}</th>
+			    <th>{{ mes.title }}</th>
+		    	    <th>{{ mes.content }}</th>
+			</tr>
+		{% endfor %}
+	{% else %}
+		<tr>
+			<th colspan="4">No Data</th>
+		</tr>
+	{% endif %}
+    </tbody>
+    <tfoo>
+
+    </tfoo>
+</table>
+</body>
+</html>
